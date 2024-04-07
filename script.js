@@ -21,11 +21,11 @@ button.addEventListener('mouseover', function() {
     button.style.transition = 'transform 0.2s ease-in-out';
 
     // Apply the new position
-    button.style.transform = `translate(${prevX + deltaX * 2}px, ${prevY + deltaY * 2}px)`;
+    button.style.transform = `translate(${prevX + deltaX * 10}px, ${prevY + deltaY * 10}px)`;
 
     // Update previous position
-    prevX = prevX + deltaX * 1;
-    prevY = prevY + deltaY * 1;
+    prevX = prevX + deltaX * 10;
+    prevY = prevY + deltaY * 10;
 
     // Increment the jump count
     jumpCount++;
