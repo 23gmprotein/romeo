@@ -3,11 +3,12 @@ let jumpCount = 0;
 let prevX = 0;
 let prevY = 0;
 
-button.addEventListener('mouseover', function(event) {
+// Function to handle button jump
+function handleButtonJump(event) {
   if (jumpCount < 100) {
     const buttonRect = button.getBoundingClientRect();
-    const areaWidth = window.screen.width * 0.50; // Decrease the jumping surface area width
-    const areaHeight = window.screen.height * 0.40; // Decrease the jumping surface area height
+    const areaWidth = window.screen.width * 0.45; // Decrease the jumping surface area width
+    const areaHeight = window.screen.height * 0.45; // Decrease the jumping surface area height
     const maxX = areaWidth - buttonRect.width;
     const maxY = areaHeight - buttonRect.height;
 
@@ -32,13 +33,9 @@ button.addEventListener('mouseover', function(event) {
     // Increment the jump count
     jumpCount++;
   }
-});
+}
 
-// Add event listeners for click and touchstart
-button.addEventListener('click', function() {
-  // Handle button click event here
-});
-
-button.addEventListener('touchstart', function() {
-  // Handle touch event here
-});
+// Add event listeners for mouseover and touchstart
+button.addEventListener('mouseover', handleButtonJump);
+button.addEventListener('touchstart', handleButtonJump);
+button.addEventListener('pointerdown', handleButtonJump);
