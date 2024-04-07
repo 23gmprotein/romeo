@@ -6,8 +6,8 @@ let prevY = 0;
 button.addEventListener('mouseover', function() {
   if (jumpCount < 100) {
     const buttonRect = button.getBoundingClientRect();
-    const maxX = (window.width - buttonRect.width) * 0.10;
-    const maxY = (window.height - buttonRect.height) * 0.10;
+    const maxX = (window.width - buttonRect.width) * 0.50;
+    const maxY = (window.height - buttonRect.height) * 0.50;
 
     // Calculate random positions with a larger distance from the previous position
     const newX = Math.max(0, Math.min(Math.random() * maxX, maxX));
@@ -21,11 +21,11 @@ button.addEventListener('mouseover', function() {
     button.style.transition = 'transform 0.2s ease-in-out';
 
     // Apply the new position
-    button.style.transform = `translate(${prevX + deltaX * 10}px, ${prevY + deltaY * 10}px)`;
+    button.style.transform = `translate(${prevX + deltaX * 2}px, ${prevY + deltaY * 2}px)`;
 
     // Update previous position
-    prevX = prevX + deltaX * 1;
-    prevY = prevY + deltaY * 1;
+    prevX = prevX + deltaX * 2;
+    prevY = prevY + deltaY * 2;
 
     // Increment the jump count
     jumpCount++;
