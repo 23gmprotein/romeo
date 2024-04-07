@@ -14,7 +14,7 @@ body {
 
   h1 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 40;
+    font-weight: 100;
   }
 
   .container {
@@ -30,4 +30,6 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 20;
   }
+  
+
   
