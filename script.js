@@ -24,8 +24,8 @@ button.addEventListener('mouseover', function() {
     button.style.transform = `translate(${prevX + deltaX * 10}px, ${prevY + deltaY * 10}px)`;
 
     // Update previous position
-    prevX = prevX + deltaX * 10;
-    prevY = prevY + deltaY * 10;
+    prevX = prevX + deltaX * 1;
+    prevY = prevY + deltaY * 1;
 
     // Increment the jump count
     jumpCount++;
