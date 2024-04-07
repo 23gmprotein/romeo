@@ -33,3 +33,12 @@ button.addEventListener('mouseover', function(event) {
     jumpCount++;
   }
 });
+
+// Add event listeners for click and touchstart
+button.addEventListener('click', function() {
+  // Handle button click event here
+});
+
+button.addEventListener('touchstart', function() {
+  // Handle touch event here
+});
