@@ -3,11 +3,13 @@ let jumpCount = 0;
 let prevX = 0;
 let prevY = 0;
 
-button.addEventListener('mouseover', function() {
+button.addEventListener('mouseover', function(event) {
   if (jumpCount < 100) {
     const buttonRect = button.getBoundingClientRect();
-    const maxX = (window.width - buttonRect.width) * 0.50;
-    const maxY = (window.height - buttonRect.height) * 0.50;
+    const areaWidth = window.screen.width * 0.50; // Decrease the jumping surface area width
+    const areaHeight = window.screen.height * 0.40; // Decrease the jumping surface area height
+    const maxX = areaWidth - buttonRect.width;
+    const maxY = areaHeight - buttonRect.height;
 
     // Calculate random positions with a larger distance from the previous position
     const newX = Math.max(0, Math.min(Math.random() * maxX, maxX));
@@ -21,17 +23,13 @@ button.addEventListener('mouseover', function() {
     button.style.transition = 'transform 0.2s ease-in-out';
 
     // Apply the new position
-    button.style.transform = `translate(${prevX + deltaX * 2}px, ${prevY + deltaY * 2}px)`;
+    button.style.transform = `translate(${prevX + deltaX * 0.9}px, ${prevY + deltaY * 0.9}px)`; // Increase the jump distance
 
     // Update previous position
-    prevX = prevX + deltaX * 2;
-    prevY = prevY + deltaY * 2;
+    prevX = prevX + deltaX * 0.90; // Increase the jump distance
+    prevY = prevY + deltaY * 0.90; // Increase the jump distance
 
     // Increment the jump count
     jumpCount++;
-  } else if (jumpCount === 100) {
-    // Allow user to click on the button after the 20th jump
-    button.style.transition = 'none'; // Remove transition for immediate response
   }
 });
-
